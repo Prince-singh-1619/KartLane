@@ -9,8 +9,8 @@ const { default: mongoose } = require('mongoose');
 const app = express();
 app.use(cors(
     {
-        origin: [process.env.FRONTEND_URL, "https://kart-lane-app.vercel.app"],
-        method: ["POST", "GET"],
+        origin: process.env.FRONTEND_URL,
+        method: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     },
 ))
