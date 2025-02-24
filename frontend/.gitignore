@@ -14,7 +14,6 @@ instructions.txt
 # production
 /build
 
-/src/assets/banner
 /src/assets/products
 
 # misc
