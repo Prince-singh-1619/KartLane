@@ -14,7 +14,8 @@ instructions.txt
 # production
 /build
 
-/src/assets
+/src/assets/banner
+/src/assets/products
 
 # misc
 .DS_Store
