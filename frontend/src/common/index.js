@@ -1,4 +1,5 @@
-const backendDomain = "http://localhost:8080"
+const backendDomain = "https://kart-lane.vercel.app"
+// const backendDomain = "http://localhost:8080"
 
 const SummaryApi = {
     signUp:{
