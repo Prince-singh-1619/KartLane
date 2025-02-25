@@ -15,6 +15,7 @@ instructions.txt
 /build
 
 /src/assets/products
+.env
 
 # misc
 .DS_Store
