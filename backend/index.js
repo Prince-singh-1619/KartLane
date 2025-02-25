@@ -7,6 +7,7 @@ const router = require('./routes/index');
 const { default: mongoose } = require('mongoose');
 
 const app = express();
+<<<<<<< HEAD
 app.use(cors(
     {
         origin: process.env.FRONTEND_URL,
@@ -15,6 +16,14 @@ app.use(cors(
     },
 ))
 
+=======
+app.use(cors());
+// {
+    //     origin: process.env.FRONTEND_URL,
+    //     method: ["POST", "GET", "PUT", "DELETE"],
+    //     credentials: true
+    // },
+>>>>>>> 30b5494a5235bc966aec92548e82cb1d1d5d0fe3
 app.use(express.json({ limit: '10mb' })) // photo should be under limit mb
 mongoose.connect(process.env.MONGODB_URI)
 app.use(cookieParser())
