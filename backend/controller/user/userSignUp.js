@@ -47,7 +47,6 @@ async function userSignUpController(req, res){
         })
     } 
     catch (error) {
-        // console.log("err", error)
         res.json({
             message: error.message || error,
             error: true,

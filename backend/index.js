@@ -1,7 +1,7 @@
 const cors = require('cors')
 const express = require('express')
 const cookieParser = require("cookie-parser")
-require('dotenv').config();
+require("dotenv").config();
 const connectDB = require('./config/db')
 const router = require('./routes/index');
 const { default: mongoose } = require('mongoose');
@@ -9,11 +9,12 @@ const { default: mongoose } = require('mongoose');
 const app = express();
 app.use(cors(
     {
-        origin: process.env.FRONTEND_URL,
+        origin: 'https://kart-lane-app.vercel.app' || process.env.FRONTEND_URL,
         method: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     },
 ))
+console.log("process.env.FRONTEND_URL : ", process.env.FRONTEND_URL)
 
 app.use(express.json({ limit: '10mb' })) // photo should be under limit mb
 mongoose.connect(process.env.MONGODB_URI)
