@@ -7,9 +7,10 @@ const router = require('./routes/index');
 const { default: mongoose } = require('mongoose');
 
 const app = express();
+const allowedOrigins = [process.env.FRONTEND_URL || "https://kart-lane-app.vercel.app"];
 app.use(cors(
     {
-        origin: 'https://kart-lane-app.vercel.app' || process.env.FRONTEND_URL,
+        origin: allowedOrigins,
         method: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     },

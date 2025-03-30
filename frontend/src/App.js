@@ -20,6 +20,7 @@ function App() {
       credentials: 'include'
     })
 
+    if(!dataResponse.ok) throw new Error("Failed to fetch User details")
     const dataApi = await dataResponse.json()
     if(dataApi.success){
       dispatch(setUserDetails(dataApi.data))
