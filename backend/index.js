@@ -15,11 +15,14 @@ app.use(cors(
         credentials: true
     },
 ))
-// app.get("/api/user-details", (req, res) => {
-//     res.setHeader("Access-Control-Allow-Origin", "https://kart-lane.vercel.app");
-//     res.setHeader("Access-Control-Allow-Credentials", "true");
-//     res.json({ message: "User details fetched successfully", user: {...} });
-// });
+//
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://kart-lane-app.vercel.app"); 
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+});
+
 console.log("process.env.FRONTEND_URL : ", process.env.FRONTEND_URL)
 
 app.use(express.json({ limit: '10mb' })) // photo should be under limit mb
