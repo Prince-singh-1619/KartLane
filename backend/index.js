@@ -8,15 +8,13 @@ const { default: mongoose } = require('mongoose');
 
 const app = express();
 // const allowedOrigins = [process.env.FRONTEND_URL || "https://kart-lane-app.vercel.app"];
-// app.use(cors(
-//     {
-//         origin: process.env.FRONTEND_URL,
-//         method: ["POST", "GET", "PUT", "DELETE"],
-//         credentials: true
-//     },
-// ))
-
-app.use(cors())
+app.use(cors(
+    {
+        origin: process.env.FRONTEND_URL,
+        method: ["POST", "GET", "PUT", "DELETE"],
+        credentials: true
+    },
+))
 
 //
 // app.use((req, res, next) => {
