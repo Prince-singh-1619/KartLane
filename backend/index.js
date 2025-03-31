@@ -7,21 +7,21 @@ const router = require('./routes/index');
 const { default: mongoose } = require('mongoose');
 
 const app = express();
-const allowedOrigins = [process.env.FRONTEND_URL || "https://kart-lane-app.vercel.app"];
+// const allowedOrigins = [process.env.FRONTEND_URL || "https://kart-lane-app.vercel.app"];
 app.use(cors(
     {
-        origin: allowedOrigins,
+        origin: process.env.FRONTEND_URL,
         method: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     },
 ))
 //
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://kart-lane-app.vercel.app"); 
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    next();
-});
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "https://kart-lane-app.vercel.app"); 
+//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//     next();
+// });
 
 console.log("process.env.FRONTEND_URL : ", process.env.FRONTEND_URL)
 
