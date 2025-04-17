@@ -17,7 +17,7 @@ const Cart = () => {
       method: SummaryApi.addToCartProductView.method,
       credentials: 'include',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
     })
 
