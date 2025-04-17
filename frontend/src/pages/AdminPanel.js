@@ -18,9 +18,9 @@ const AdminPanel = () => {
     <div className="min-h-[calc(100vh-120px)] hidden md:flex">
       <aside className="bg-white min-h-full w-full max-w-60 customShadow">
         <div className="h-32 flex justify-center items-center flex-col">
-          <div className="text-5xl cursor-pointer relative flex justify-center" >
+          <div className="text-5xl cursor-pointer relative flex justify-center mt-2" >
             {user?.profilePic ? (
-              <img src={user.profilePic} alt={user?.name} className="w-20 rounded-full"/>
+              <img src={user.profilePic} alt={user?.name} className="w-20 h-20 rounded-full object-cover"/>
             ) : (
               <FaRegCircleUser />
             )}
